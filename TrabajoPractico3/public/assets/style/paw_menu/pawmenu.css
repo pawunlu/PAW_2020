@@ -1,0 +1,158 @@
+ul[name="Turnos"].PAW-UlAbierto{
+	background-color: transparent;
+}
+
+ul[name="Turnos"].PAW-UlCerrado{
+    padding: 1rem;
+}
+ul[name="Turnos"].PAW-UlAbierto::before{
+	margin-right: 1rem;
+}
+
+
+ul[name="Turnos"]{
+    width: var(--menu-width);
+    text-align: end;
+    background-color: var(--menu-buttons-color);
+    margin-bottom: 0.5rem;
+}
+
+ul[name="Turnos"]::before {
+    content: "Turnos";
+}
+
+.PAW-Menu.PAW-MenuCerrado{
+	width: 0;
+	transition: width 1.5s;
+}
+
+.PAW-Menu.PAW-MenuAbierto{
+	width: var(--menu-width);
+	transition: width 1.5s;
+}
+
+nav{
+	overflow: hidden;
+    display: block;
+    position: absolute;
+    background-color: var(--menu-color);
+    right: 0;
+    top: 0;
+    height: 100vh;
+    
+}
+
+nav>ul{
+    margin-top: var(--body-header-height);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav li{
+    width: var(--menu-width);
+    padding: 1rem;
+    text-align: end;
+    background-color: var(--menu-buttons-color);
+    margin-bottom: 0.5rem;
+}
+
+.PAW-Menu button {
+	border: 0;
+	width: 2rem;
+	height: 2rem;
+	margin: 0.5rem;
+	padding: 0;
+	cursor: pointer;
+	background-color: transparent;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	right: 0;
+}
+
+.PAW-Menu button:hover,
+.PAW-Menu button:focus {
+	margin-left: 0;
+}
+
+.PAW-Menu button::before,
+.PAW-Menu button::after {
+	display: block;
+	position: absolute;
+	content: " ";
+	width: 2rem;
+	height: 0.2rem;
+	background-color: white;
+	transition-property: all;
+	transition-duration: 1s;
+	border-radius: 0.2rem;
+}
+
+.PAW-Menu button.PAW-MenuAbrir::before {
+	transform: translateY(-1rem) rotate(0);
+	box-shadow: 0 0.6rem 0 white;
+}
+
+.PAW-Menu button.PAW-MenuAbrir::after {
+	transform: translateY(0.2rem) rotate(0);
+}
+
+.PAW-Menu button.PAW-MenuCerrar::before {
+	transform: translateY(0) rotate(45deg);
+	box-shadow: 0 0.6rem 0 transparent;
+}
+
+.PAW-Menu button.PAW-MenuCerrar::after {
+	transform: translateY(0) rotate(-45deg);
+}
+
+
+@media (min-width: 1000px){
+	ul[name="Turnos"].PAW-UlAbierto::before{
+		content: "Menú de turnos";
+		margin-right: 27.5vw;
+	}
+	ul[name="Turnos"].PAW-UlAbierto{
+		width: auto;
+		border: 0.5px black solid;
+	}
+	
+	.PAW-Menu.PAW-MenuCerrado {
+		height: 0;
+		transition: all 1.5s;
+	}
+	
+	.PAW-Menu.PAW-MenuAbierto {
+		width: 100vw;
+		height: auto;
+		transition: all 1.5s;
+	}
+
+	.PAW-Menu.PAW-MenuCerrado li, .PAW-Menu.PAW-MenuCerrado .PAW-UlCerrado{
+		transition: opacity 0.5s;
+		opacity: 0;
+	}
+
+	.PAW-Menu.PAW-MenuAbierto li, .PAW-Menu.PAW-MenuAbierto .PAW-UlCerrado{
+		transition: opacity 2.5s;
+		opacity: 1;
+	}
+
+    nav{
+		top: auto;  
+    }
+
+    nav>ul{
+        margin: 1rem 1rem;
+        justify-content: center;
+	}
+	
+    nav li{
+        text-align: center;
+	}
+	
+	.PAW-Menu button {
+		top: 2vh;
+		right: 1vw;
+	}
+}
