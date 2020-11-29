@@ -1,11 +1,36 @@
-.progressBar{
-    position: absolute;
-    width: 100vw;
-    height: 2vh;
-    margin-left: auto;
-    background-color: #f1f1f1;
-    /*background-color: #f44336;*/
+aside>img:nth-of-type(1){
+    display: none;
 }
+
+img.loading {
+    width: 2vw;
+    height: 2vw;
+    border: 1vw solid #f3f3f3; /* Light grey */
+    border-top: 1vw solid var(--turquesa-70); /* Blue */
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+.progressBar, .progress{
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 1vh;
+    
+}
+
+.progressBar{
+    background-color: #f1f1f1;
+}
+
+
+.progress{
+    transition: width 1s;
+    --ancho: 0;
+    width: var(--ancho);
+    background-color: #f44336;
+}
+
 
 img.imgCarousel{
     width: 100%;
@@ -13,14 +38,36 @@ img.imgCarousel{
     object-fit: cover;
     left: 0;
     position: absolute;
-    clip-path: circle(0% at 50% 50%);
-    transition: clip-path 1.5s;
 }
 
-img.imgCarousel.active{
-    
+img.imgCarousel:nth-of-type(2){
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 0.5s;
+}
+
+img.imgCarousel.active:nth-of-type(2){
     clip-path: circle(100% at 50% 50%);
-    transition: clip-path 1.5s;
+    transition: clip-path 2.5s;
+}
+
+img.imgCarousel:nth-of-type(3){
+    clip-path: ellipse(0% 0% at 50% 50%);;
+    transition: clip-path 0.5s;
+}
+
+img.imgCarousel.active:nth-of-type(3){
+    clip-path: ellipse(100% 100% at 50% 50%);;
+    transition: clip-path 2.5s;
+}
+
+img.imgCarousel:nth-of-type(4){
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 0.5s;
+}
+
+img.imgCarousel.active:nth-of-type(4){
+    clip-path: circle(100% at 50% 50%);
+    transition: clip-path 2.5s;
 }
 
 .contenedorThumbs{
@@ -42,7 +89,7 @@ img.imgCarousel.active{
 }
 
 .circuloCarousel.active{
-    border: 2px black solid;
+    border: 2px var(--turquesa-150) solid;
 }
 
 .buttonNext, .buttonPrev{
@@ -92,31 +139,15 @@ img.imgCarousel.active{
 .buttonPrev{
     left: 0;
     text-align: start;
-    background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,0.7917367630646008) 0%, rgba(0,0,0,0.4920168751094187) 50%, rgba(255,255,255,0) 100%);
+    background: rgb(0,77,71);
+    background: linear-gradient(90deg, rgba(0,77,71,1) 0%, rgba(0,0,0,0) 100%);
 }
 
 .buttonNext{
     right: 0;
-    background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.4920168751094187) 50%, rgba(0,0,0,0.783333401720063) 100%);
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,77,71,1) 100%);
     text-align: end;
-}
-
-img.loading{
-    width: 15vw;
-    height: 15vw;
-    margin-left: 42vw;
-    margin-top: 12vh;
-}
-
-.loading {
-    border: 2vw solid #f3f3f3; /* Light grey */
-    border-top: 2vw solid #3498db; /* Blue */
-    border-radius: 50%;
-    width: 1vw;
-    height: 1vw;
-    animation: spin 2s linear infinite;
 }
   
 @keyframes spin {
@@ -136,7 +167,7 @@ img.loading{
         
     .loading {
         border: 8px solid #f3f3f3; /* Light grey */
-        border-top: 8px solid #3498db; /* Blue */
+        border-top: 8px solid var(--turquesa-70); /* Blue */
         border-radius: 50%;
         width: 1vw;
         height: 1vw;
@@ -151,5 +182,15 @@ img.loading{
     .buttonPrev::after{
         left: 0;
         transform: translateY(0.5vh) rotate(-135deg);
+    }
+
+    img.imgCarousel:nth-of-type(4){
+        clip-path: inset(50% 90% 50% 10%);
+        transition: clip-path 0.5s;
+    }
+    
+    img.imgCarousel.active:nth-of-type(4){
+        clip-path: inset(100% 100% 100% 100%);
+        transition: clip-path 2.5s;
     }
 }

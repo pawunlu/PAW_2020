@@ -14,7 +14,7 @@ class PageController extends Controller {
     public function index(){
         $titulo = "Home";
         $descripcion = "Pagina principal del sitio";
-        require $this->viewDir.'index.view.php';
+        require $this->viewDir.'index.view.html';
     }
 
     //lo pase todo a turnoController
@@ -36,25 +36,25 @@ class PageController extends Controller {
     public function estudios(){
         $titulo = "Estudios";
         $descripcion = "Pagina de Estudios del sitio";
-        require $this->viewDir . 'estudios.view.php';
+        require $this->viewDir . 'estudios.view.html';
     }
     
     public function obras_sociales(){
         $titulo = "Obras Sociales";
         $descripcion = "Pagina de Obras Sociales del sitio";
-        require $this->viewDir . 'obras_sociales.view.php';
+        require $this->viewDir . 'obras_sociales.view.html';
     }
     
     public function especialidades(){
         $titulo = "Especialidades";
         $descripcion = "Pagina de Especialidades del sitio";
-        require $this->viewDir . 'especialidades.view.php';
+        require $this->viewDir . 'especialidades.view.html';
     }
     
     public function noticias(){
         $titulo = "Noticias";
         $descripcion = "Pagina de Noticias del sitio";
-        require $this->viewDir . 'noticias.view.php';
+        require $this->viewDir . 'noticias.view.html';
     }
 
     public function institucional(){

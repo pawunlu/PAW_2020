@@ -1,0 +1,46 @@
+:root{
+    --thead-color: var(--turquesa-90);
+    --impares-color: var(--turquesa-30);
+    --thead-letter-color: var(--turquesa-10);
+}
+
+.pawContenedorCalendario.cerrado{
+    width: 0;
+    transition: width 1.5s;
+}
+
+.pawContenedorCalendario.abierto{
+    width: 100vw;
+    transition: width 1.5s;  
+}
+
+.pawContenedorCalendario{
+    height: auto;
+    right: 0;
+    top: 17.5vh;
+    display: block;
+    position: absolute;
+    background-color: var(--turquesa-20);
+    /*overflow: auto;*/
+}
+
+.pawContenedorCalendario tr:nth-child(2n+1){
+    background-color: var(--impares-color);
+}
+
+html body main form fieldset div.pawContenedorCalendario.abierto table.PawTable tr.PawDiasAtiende{
+    color: white;
+    background-color: var(--thead-color);
+}
+
+table, th, td {
+    border: 1px solid var(--borders-color);
+}
+
+table{
+    width: 100%;
+}
+
+@media (min-width: 1000px){
+
+}

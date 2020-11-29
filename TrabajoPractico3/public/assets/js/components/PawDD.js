@@ -19,26 +19,28 @@ class PawDD {
         zona.addEventListener("drop",soltar,false);
 
         function soltar(e) {
-            console.log("entro a soltar")
+
             e.preventDefault();
-            let listaArchivos = e.dataTransfer.files;
-            let lista = "";
 
-            for (let i = 0; i < listaArchivos.length; i++) {
-                lista = listaArchivos[i].name;
-            }
+            let entrada = document.querySelector("input[name='archivosubidoDD']");
 
-            //esto solo muestra el archivo.
+            entrada.files=e.dataTransfer.files;
+
+            console.log(entrada.files);
 
 
-            soltar.innerHTML=lista;
         }
 
         }
 
-        window.addEventListener("load",comenzar,false);
+        //window.addEventListener("load",comenzar,false);
+        comenzar();
 
     }
 
-
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    let dd = new PawDD("pawCard cargaDeEstudio");
+});

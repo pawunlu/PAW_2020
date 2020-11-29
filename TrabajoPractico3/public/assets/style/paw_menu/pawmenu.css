@@ -18,7 +18,8 @@ ul[name="Turnos"]{
 }
 
 ul[name="Turnos"]::before {
-    content: "Turnos";
+	color: var(--color-letras);
+	content: "Turnos";
 }
 
 .PAW-Menu.PAW-MenuCerrado{
@@ -68,6 +69,7 @@ nav li{
 	overflow: hidden;
 	top: 0;
 	right: 0;
+	margin-top: 1rem;
 }
 
 .PAW-Menu button:hover,
@@ -114,18 +116,18 @@ nav li{
 	}
 	ul[name="Turnos"].PAW-UlAbierto{
 		width: auto;
-		border: 0.5px black solid;
+		border: 0.5px var(--border-color) solid;
 	}
 	
 	.PAW-Menu.PAW-MenuCerrado {
 		height: 0;
-		transition: all 1.5s;
+		transition: all 0.5s;
 	}
 	
 	.PAW-Menu.PAW-MenuAbierto {
 		width: 100vw;
-		height: auto;
-		transition: all 1.5s;
+		height: 100vh;
+		transition: all 0.5s;
 	}
 
 	.PAW-Menu.PAW-MenuCerrado li, .PAW-Menu.PAW-MenuCerrado .PAW-UlCerrado{
@@ -154,5 +156,6 @@ nav li{
 	.PAW-Menu button {
 		top: 2vh;
 		right: 1vw;
+		margin-top: 0.5rem;
 	}
 }

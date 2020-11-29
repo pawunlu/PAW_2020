@@ -1,26 +1,17 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <?php require 'parts/head.view.php'; ?>
+{% extends "parts/baseAsideDown.twig" %}
+
+{% block head %}
+    {{ parent() }}
     <link rel="stylesheet" type="text/css" href="/assets/style/estudios/estudios.css"/>
-</head>
-<body>
-    <header>
+{% endblock %}
+
+{% block header %}
         <h1> <img src="/assets/imagenes/logo.png" alt="Logo empresarial" width="50" height="50">Enterprise Name</h1>
-        <?php
-        require 'parts/nav.view.php';
-        ?>
-    </header>
+    {{ parent() }}
+{% endblock %}
 
-
-
-
-    <!--no se si en mi seccion deberia poner una imagen u otra cosa. (alguien tiene info de covid aca)-->
-
-
-
-    <main>
-        <header>
+{% block main %}
+<header>
             <h1>Estudios</h1>
         </header>
 
@@ -75,16 +66,4 @@
         </table>
 
         </section>
-    </main>
-
-    <aside>
-        <img  src ="/imagenes/publicidad.jpg" alt = "Publicidad">
-    </aside>
-    <footer>
-        <!-- Href a google maps? -->
-        <?php
-        require 'parts/footer.view.php';
-        ?>
-    </footer>
-</body>
-</html>
+{% endblock %}

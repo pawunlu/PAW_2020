@@ -1,9 +1,12 @@
 :root{
-    --article-background: darkgrey;
+    --article-background: var(--turquesa-20);
+    color: var(--color-letras);
 }
 
 input[type="submit"]{ /* Reubico el button de "Buscar" */
     float: right;
+    width: 20vw;
+    margin-bottom: 2rem;
 }
 
 fieldset{
@@ -30,10 +33,14 @@ article{ /* Estilizo los resultados de la busqueda */
 }
 
 aside{ /* Estilizo la publicidad */
-    border: 1px black solid;
     text-align: center;
     margin: 1rem 0.3rem;
     padding: 1rem;
+}
+
+aside img{
+    height: 50vh;
+    width: 20vw;
 }
 
 
@@ -49,6 +56,9 @@ aside{ /* Estilizo la publicidad */
         grid-template-rows: 10% 30% 50% 10% ;
     }
 
+    main{
+        height: 77vh;
+    }
     main>header{
         grid-area: header;
     }
@@ -65,6 +75,8 @@ aside{ /* Estilizo la publicidad */
     }
     main>footer{
         grid-area: footer;
+        position: relative;
+        bottom: -30vw;
     }
 
     input[type="submit"]{
